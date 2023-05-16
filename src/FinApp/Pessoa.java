@@ -39,12 +39,6 @@ public class Pessoa {
         this.email = email;
     }
 
-    public String toString(){
-        return "\nNome: " + this.getNome() +
-               "\nEmail: " + this.getEmail() +
-               "\nCpf: " + this.getCpf();
-    
-    }
 
 }
 
