@@ -56,8 +56,7 @@ public class Calculadora {
     public void atualizarSaldo() {
         double totalEntradas = calcularTotalEntradas();
         double totalSaidas = calcularTotalSaidas();
-        double saldoAtual = conta.getSaldo();
         double saldoNovo = totalEntradas - totalSaidas;
-        conta.setSaldo(saldoAtual + saldoNovo);
+        conta.setSaldo(saldoNovo);
     }
 }
