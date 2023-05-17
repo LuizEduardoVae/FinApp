@@ -48,7 +48,7 @@ public class Main {
                     System.out.println("Até a proxima...");
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    System.out.println("Opção inválida. Seleciona as opcoes entre 0 a 6");
                     break;
             }
 
@@ -73,7 +73,7 @@ public class Main {
 
         contas.add(conta);
         System.out.println("Conta criada com sucesso!");
-        System.out.println("Titular da conta: " + pessoa.getNome());
+        System.out.println("Bem vindo(a)," + pessoa.getNome());
     }
 
     private static void adicionarEntrada(Scanner scanner, List<Conta> contas) {
