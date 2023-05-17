@@ -45,7 +45,7 @@ public class Main {
                     verSaldoTotal(contas);
                     break;
                 case 0:
-                    System.out.println("Encerrando o programa...");
+                    System.out.println("Até a proxima...");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
