@@ -73,7 +73,7 @@ public class Main {
 
         contas.add(conta);
         System.out.println("Conta criada com sucesso!");
-        System.out.println("Bem vindo(a)," + pessoa.getNome());
+        System.out.println("Bem vindo(a), " + pessoa.getNome());
     }
 
     private static void adicionarEntrada(Scanner scanner, List<Conta> contas) {
@@ -116,7 +116,11 @@ public class Main {
 
         Conta conta = contas.get(0);
 
-        System.out.println("Entradas da conta:");
+        Calculadora calculadora = new Calculadora(conta.getEntradas(), conta.getSaidas(), conta);
+        double totalEntradas = calculadora.calcularTotalEntradas();
+
+        System.out.println("Total das Entradas: \n" + totalEntradas);
+        System.out.println("\nEntradas:");
         for (double entrada : conta.getEntradas()) {
             System.out.println(entrada);
         }
@@ -130,7 +134,11 @@ public class Main {
 
         Conta conta = contas.get(0);
 
-        System.out.println("Saídas da conta:");
+        Calculadora calculadora = new Calculadora(conta.getEntradas(), conta.getSaidas(), conta);
+        double totalSaidas = calculadora.calcularTotalSaidas();
+        
+        System.out.println("Total das saidas: \n" + totalSaidas);
+        System.out.println("\nSaídas:");
         for (double saida : conta.getSaidas()) {
             System.out.println(saida);
         }
