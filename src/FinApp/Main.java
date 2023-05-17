@@ -12,7 +12,7 @@ public class Main {
         int opcao;
 
         do {
-            System.out.println("=== Menu ===");
+            System.out.println("============  Menu ============");
             System.out.println("1. Criar conta");
             System.out.println("2. Adicionar entrada");
             System.out.println("3. Adicionar saída");
@@ -72,8 +72,8 @@ public class Main {
         Conta conta = new Conta(pessoa, 0);
 
         contas.add(conta);
-        System.out.println("Conta criada com sucesso!");
-        System.out.println("Bem vindo(a), " + pessoa.getNome());
+        System.out.println("\nConta criada com sucesso!");
+        System.out.println("\nBem vindo(a), " + pessoa.getNome());
     }
 
     private static void adicionarEntrada(Scanner scanner, List<Conta> contas) {
@@ -120,7 +120,7 @@ public class Main {
         double totalEntradas = calculadora.calcularTotalEntradas();
 
         System.out.println("Total das Entradas: \n" + totalEntradas);
-        System.out.println("\nEntradas:");
+        System.out.println("\nLista das suas Entradas:");
         for (double entrada : conta.getEntradas()) {
             System.out.println(entrada);
         }
@@ -138,7 +138,7 @@ public class Main {
         double totalSaidas = calculadora.calcularTotalSaidas();
         
         System.out.println("Total das saidas: \n" + totalSaidas);
-        System.out.println("\nSaídas:");
+        System.out.println("\nLista das suas Saídas:");
         for (double saida : conta.getSaidas()) {
             System.out.println(saida);
         }
