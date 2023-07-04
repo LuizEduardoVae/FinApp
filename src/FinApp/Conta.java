@@ -6,15 +6,26 @@ import java.util.List;
 public class Conta {
     private Pessoa pessoa;
     private double saldo;
-    private List<Double> entradas;
-    private List<Double> saidas;
+    private List<Entrada> entradas;
+    private List<Saida> saidas;
+    private List<Contasapagar> saidasfuturas;
 
+    
     public Conta(Pessoa pessoa, double saldo) {
         this.pessoa = pessoa;
         this.saldo = saldo;
         this.entradas = new ArrayList<>();
         this.saidas = new ArrayList<>();
     }
+
+    public List<Contasapagar> getSaidasfuturas() {
+            return this.saidasfuturas;
+        }
+
+    public void setSaidasfuturas(List<Contasapagar> saidasfuturas) {
+            this.saidasfuturas = saidasfuturas;
+        }
+
 
     public Pessoa getPessoa() {
         return pessoa;
@@ -32,19 +43,19 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public List<Double> getEntradas() {
+    public List<Entrada> getEntradas() {
         return entradas;
     }
 
-    public void setEntradas(List<Double> entradas) {
+    public void setEntradas(List<Entrada> entradas) {
         this.entradas = entradas;
     }
 
-    public List<Double> getSaidas() {
+    public List<Saida> getSaidas() {
         return saidas;
     }
 
-    public void setSaidas(List<Double> saidas) {
+    public void setSaidas(List<Saida> saidas) {
         this.saidas = saidas;
     }
 }

@@ -3,52 +3,28 @@ package FinApp;
 import java.util.List;
 
 public class Calculadora {
-    private List<Double> entradas;
-    private List<Double> saidas;
+    private List<Entrada> entradas;
+    private List<Saida> saidas;
     private Conta conta;
 
-    public Calculadora(List<Double> entradas, List<Double> saidas, Conta conta) {
+    public Calculadora(List<Entrada> entradas, List<Saida> saidas, Conta conta) {
         this.entradas = entradas;
         this.saidas = saidas;
-        this.conta = conta;
-    }
-
-    public List<Double> getEntradas() {
-        return entradas;
-    }
-
-    public void setEntradas(List<Double> entradas) {
-        this.entradas = entradas;
-    }
-
-    public List<Double> getSaidas() {
-        return saidas;
-    }
-
-    public void setSaidas(List<Double> saidas) {
-        this.saidas = saidas;
-    }
-
-    public Conta getConta() {
-        return conta;
-    }
-
-    public void setConta(Conta conta) {
         this.conta = conta;
     }
 
     public double calcularTotalEntradas() {
         double totalEntradas = 0.0;
-        for (double entrada : entradas) {
-            totalEntradas += entrada;
+        for (Entrada entrada : entradas) {
+            totalEntradas += entrada.getValor();
         }
         return totalEntradas;
     }
 
     public double calcularTotalSaidas() {
         double totalSaidas = 0.0;
-        for (double saida : saidas) {
-            totalSaidas += saida;
+        for (Saida saida : saidas) {
+            totalSaidas += saida.getValor();
         }
         return totalSaidas;
     }
