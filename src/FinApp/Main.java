@@ -21,11 +21,13 @@ public class Main {
             System.out.println("6. Ver saldo total");
             System.out.println("7. Visualizar relatório");
             System.out.println("");
-            System.out.println("============  Em desenvolvimento  ============");
+            System.out.println("");
+            System.out.println("============  Planejamento de Gastos Futuros  ============");
             System.out.println("8. Adicionar conta a Pagar");
             System.out.println("9. Ver contas a Pagar");
-            System.out.println("============  Em desenvolvimento ============");
             System.out.println("");
+            System.out.println("");
+            System.out.println("============ Sair ============");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
@@ -95,6 +97,8 @@ public class Main {
     private static void adicionarEntrada(Scanner scanner, List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -112,6 +116,8 @@ public class Main {
     private static void adicionarSaida(Scanner scanner, List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -133,12 +139,16 @@ public class Main {
 
         conta.getSaidas().add(saida);
         System.out.println("Saída adicionada com sucesso!");
+        System.out.println("");
+        System.out.println("");
     }
 
     private static void adicionarSaidafutura(Scanner scanner, List<Conta> contas) {
 
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -160,11 +170,15 @@ public class Main {
 
         conta.getSaidasfuturas().add(saidaFuturas);
         System.out.println("Conta a pagar adicionada com sucesso!");
+        System.out.println("");
+        System.out.println("");
     }
 
     private static void verContasaPagar(List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -179,7 +193,8 @@ public class Main {
             System.out.println("Valor: " + saidasfuturas.getValor());
             System.out.println("Categoria: " + saidasfuturas.getCategoria().getNome());
             System.out.println("Descrição: " + saidasfuturas.getDescricao().getDescricao());
-            System.out.println();
+            System.out.println("");
+            System.out.println("");
         }
     }
 
@@ -188,6 +203,8 @@ public class Main {
     private static void verEntradas(List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -201,11 +218,15 @@ public class Main {
         for (Entrada entrada : conta.getEntradas()) {
             System.out.println(entrada.getValor());
         }
+        System.out.println("");
+        System.out.println("");
     }
 
     private static void verSaidas(List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -220,7 +241,9 @@ public class Main {
             System.out.println("Valor: " + saida.getValor());
             System.out.println("Categoria: " + saida.getCategoria().getNome());
             System.out.println("Descrição: " + saida.getDescricao().getDescricao());
-            System.out.println();
+            System.out.println("");
+            System.out.println("");
+            
         }
     }
 
@@ -229,6 +252,8 @@ public class Main {
     private static void verSaldoTotal(List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 
@@ -243,6 +268,8 @@ public class Main {
     private static void gerarRelatorioDespesasPorCategoria(List<Conta> contas) {
         if (contas.isEmpty()) {
             System.out.println("Nenhuma conta encontrada. Crie uma conta antes de usar o app");
+            System.out.println("");
+            System.out.println("");
             return;
         }
 

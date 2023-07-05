@@ -1,5 +1,8 @@
 package FinApp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
@@ -13,24 +16,42 @@ public class Relatorio {
     }
 
     public void gerarRelatorioDespesasPorCategoria() {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        for (Saida saida : conta.getSaidas()) {
-            double valor = saida.getValor();
-            String categoria = saida.getCategoria().getNome();
+            Map<String, Double> categoriasSoma = new HashMap<>();
 
-            dataset.addValue(valor, "Despesas", categoria);
-        }
+            for (Saida saida : conta.getSaidas()) {
+                double valor = saida.getValor();
+                String categoria = saida.getCategoria().getNome();
 
-        JFreeChart chart = ChartFactory.createBarChart(
-                "Gráfico de Despesas por Categoria",
-                "Categoria",
-                "Valor",
-                dataset
-        );
+                
+                if (categoriasSoma.containsKey(categoria)) {
+                    double soma = categoriasSoma.get(categoria);
+                    soma += valor;
+                    categoriasSoma.put(categoria, soma);
+                } else {
+                    categoriasSoma.put(categoria, valor);
+                }
+            }
 
-        ChartFrame frame = new ChartFrame("Relatório", chart);
-        frame.pack();
-        frame.setVisible(true);
+            for (Map.Entry<String, Double> entry : categoriasSoma.entrySet()) {
+                String categoria = entry.getKey();
+                double soma = entry.getValue();
+
+                dataset.addValue(soma, "Despesas", categoria);
+            }
+
+            JFreeChart chart = ChartFactory.createBarChart(
+                    "Gráfico de Despesas por Categoria",
+                    "Categoria",
+                    "Valor",
+                    dataset
+            );
+
+            ChartFrame frame = new ChartFrame("Relatório", chart);
+            frame.pack();
+            frame.setVisible(true);
     }
+
 }
+
