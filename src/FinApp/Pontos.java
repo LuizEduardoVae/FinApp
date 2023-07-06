@@ -1,25 +1,21 @@
 package FinApp;
 
 public class Pontos {
-    private int totalPontos;
-    private Usuario usuarioLogado;
+    private int pontos;
 
     public Pontos() {
-        this.totalPontos = 0;
-        this.usuarioLogado = null;
+        this.pontos = 0;
     }
 
-    public void setUsuarioLogado(Usuario usuario) {
-        this.usuarioLogado = usuario;
+    public int getPontos() {
+        return pontos;
     }
 
-    public void registrarOperacao(int quantidadePontos) {
-        if (usuarioLogado != null) {
-            usuarioLogado.adicionarPontos(quantidadePontos);
-        }
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
     }
 
-    public int getTotalPontos() {
-        return totalPontos;
+    public void incrementarPontos() {
+        this.pontos += 10;
     }
 }

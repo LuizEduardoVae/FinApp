@@ -1,66 +1,47 @@
 package FinApp;
 
-import java.util.List;
-import java.util.ArrayList;
-
-
 public class Conta {
-
     private String numero;
+    private String descricao;
     private Usuario usuario;
-    private Cartao cartao;
-    private List<Operacao> operacoes;
-    private double saldo;
-    private Pontos pontos; 
+    private CartaoCredito cartaoCredito;
 
-    public Conta(String numero, Usuario usuario, Cartao cartao) {
+    public Conta(String numero, String descricao, Usuario usuario) {
         this.numero = numero;
+        this.descricao = descricao;
         this.usuario = usuario;
-        this.cartao = cartao;
-        this.operacoes = new ArrayList<>();
-        this.saldo = 0.0;
-        this.pontos = new Pontos(); 
-    }
-    
-    public Cartao getCartao() {
-        return cartao;
     }
 
-    public void setCartao(Cartao cartao) {
-        this.cartao = cartao;
+    public CartaoCredito getCartaoCredito() {
+        return cartaoCredito;
+    }
+
+    public void setCartaoCredito(CartaoCredito cartaoCredito) {
+        this.cartaoCredito = cartaoCredito;
     }
 
     public String getNumero() {
-        return numero;
+        return this.numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Usuario getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
-     public void adicionarOperacao(Operacao operacao) {
-        operacoes.add(operacao);
-        atualizarSaldo(operacao);
-        pontos.registrarOperacao(10); 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-
-    private void atualizarSaldo(Operacao operacao) {
-        if (operacao instanceof Entrada) {
-            saldo += operacao.getValor();
-        } else if (operacao instanceof Saida) {
-            saldo -= operacao.getValor();
-        }
-        if (cartao instanceof Fatura) {
-        double valorFatura = ((Fatura) cartao).getValorF();
-        saldo -= valorFatura;
-        }
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public List<Operacao> getOperacoes() {
-        return operacoes;
-    }
+    
 }

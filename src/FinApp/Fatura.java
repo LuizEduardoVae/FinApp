@@ -1,48 +1,44 @@
 package FinApp;
+public class Fatura {
+    private int id;
+    private double valor;
+    private boolean paga;
 
-public class Fatura extends Cartao {
-    private String dataV;
-    private double valorF;
-    private String dataP;
-    private String descricao;
 
-    public Fatura(String nome, String cpf, String endereco, double fatura, String dataV, double valorF, String dataP, String descricao) {
-        super(nome, cpf, endereco, fatura);
-        this.dataV = dataV;
-        this.valorF = valorF;
-        this.dataP = dataP;
-        this.descricao = descricao;
+    public int getId() {
+        return this.id;
     }
 
-    public String getDataV() {
-        return this.dataV;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDataV(String dataV) {
-        this.dataV = dataV;
+    public double getValor() {
+        return this.valor;
     }
 
-    public double getValorF() {
-        return this.valorF;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
-    public void setValorF(double valorF) {
-        this.valorF = valorF;
+    public boolean isPaga() {
+        return this.paga;
     }
 
-    public String getDataP() {
-        return this.dataP;
+    public boolean getPaga() {
+        return this.paga;
     }
 
-    public void setDataP(String dataP) {
-        this.dataP = dataP;
+    public void setPaga(boolean paga) {
+        this.paga = paga;
+    }
+    public Fatura(int id, double valor) {
+        this.id = id;
+        this.valor = valor;
+        this.paga = false;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void marcarComoPaga() {
+        this.paga = true;
     }
 }

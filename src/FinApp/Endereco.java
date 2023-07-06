@@ -2,37 +2,54 @@ package FinApp;
 
 public class Endereco {
     private String rua;
-    private String cep;
     private String cidade;
-    private String bairro;
-    private String numero;
+    private String estado;
+    private String cep;
 
-    public Endereco(String rua, String cep, String cidade, String bairro, String numero) {
+  
+  
+    // Construtor
+    public Endereco(String rua, String cidade, String estado, String cep) {
         this.rua = rua;
-        this.cep = cep;
         this.cidade = cidade;
-        this.bairro = bairro;
-        this.numero = numero;
+        this.estado = estado;
+        this.cep = cep;
     }
 
+
+
+    // Getters e Setters
     public String getRua() {
-        return rua;
+        return this.rua;
     }
 
-    public String getCep() {
-        return cep;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
     public String getCidade() {
-        return cidade;
+        return this.cidade;
     }
 
-    public String getBairro() {
-        return bairro;
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getEstado() {
+        return this.estado;
     }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCep() {
+        return this.cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+  
+    
 }
-
