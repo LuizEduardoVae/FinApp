@@ -1,38 +1,20 @@
 package FinApp;
+import java.time.LocalDate;
 
-public class Saida {
-    private double valor;
-    private Categoria categoria;
-    private Descricao descricao;
+public class Saida extends Operacao {
+    private String categoria;
 
-    public Saida(double valor, Categoria categoria, Descricao descricao) {
-        this.valor = valor;
+    public Saida(double valor, LocalDate data, String categoria) {
+        super(valor, data);
         this.categoria = categoria;
-        this.descricao = descricao;
     }
 
-
-    public Descricao getDescricao() {
-        return this.descricao;
-    }
-
-    public void setDescricao(Descricao descricao) {
-        this.descricao = descricao;
-    }
-    
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 }
+

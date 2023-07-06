@@ -1,18 +1,21 @@
 package FinApp;
+import java.time.LocalDate;
 
-public class Entrada {
-    private double valor;
+public class Entrada extends Operacao {
+    private String categoria;
 
-    public Entrada(double valor) {
-        this.valor = valor;
+
+
+    public Entrada(double valor, LocalDate data, String categoria) {
+        super(valor, data);
+        this.categoria = categoria;
     }
 
-    public double getValor() {
-        return valor;
+    public String getCategoria() {
+        return categoria;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }
-
