@@ -3,6 +3,8 @@ package FinApp;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Map;
+
 public class Usuario {
     private String nome;
     private String cpf;
@@ -11,6 +13,8 @@ public class Usuario {
     private Endereco endereco;
     private List<Conta> contas;
     private Pontos pontos;
+    private PlanejamentoFinanceiro planejamentoFinanceiro;
+    private RelatorioFinanceiro relatorioFinanceiro;
 
     public Usuario(String nome, String cpf, String email, String senha, Endereco endereco) {
         this.nome = nome;
@@ -21,9 +25,24 @@ public class Usuario {
         this.contas = new ArrayList<>();
         this.pontos = new Pontos();
     }
-    
 
-    
+
+    public RelatorioFinanceiro getRelatorioFinanceiro() {
+        return relatorioFinanceiro;
+    }
+
+    public void setRelatorioFinanceiro(RelatorioFinanceiro relatorioFinanceiro) {
+        this.relatorioFinanceiro = relatorioFinanceiro;
+    }
+
+    public PlanejamentoFinanceiro getPlanejamentoFinanceiro() {
+        return planejamentoFinanceiro;
+    }
+
+    public void setPlanejamentoFinanceiro(PlanejamentoFinanceiro planejamentoFinanceiro) {
+        this.planejamentoFinanceiro = planejamentoFinanceiro;
+    }
+
      public Pontos getPontos() {
         return pontos;
     }
