@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/luizeduardovedoato/Downloads/jfreechart-1.0.19/**/*.jar",
+        "/Users/luizeduardovedoato/Downloads/javafx-sdk-20.0.1/**/*.jar"
+    ]
+}
